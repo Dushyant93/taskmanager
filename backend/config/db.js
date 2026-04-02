@@ -6,7 +6,10 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);  // Remove deprecated options
+    console.log("going to make mongo connection ")
+    MONGO_URI="mongodb+srv://dushyantsingh1602_db_user:SSSGbKcsWY0FqWxK@cluster0.ygzsphl.mongodb.net/taskmanager?retryWrites=true&w=majority&appName=Cluster0"
+    //console.log("connection uri: ",process.env);
+    await mongoose.connect(MONGO_URI);  // Remove deprecated options
     console.log("MongoDB connected successfully");
   } catch (error) {
     console.error("MongoDB connection error:", error.message);
